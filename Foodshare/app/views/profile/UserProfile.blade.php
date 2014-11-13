@@ -30,7 +30,7 @@
     <div class="edit-text">
       <div class="container">
       @foreach ($comments as $comment)
-          {{ $comment->Comment }} </br>
+          <a href="{{ URL::route('profile-user',$comment->Email)}}">{{ $comment->Email }} </a>:{{ $comment->Comment }} </br>
       @endforeach
       <form role="form" class="form-order" action="{{ URL::route('Comment-set') }}" method="post" enctype="multipart/form-data">
         <textarea class="form-control" rows="3" name="comment"></textarea>

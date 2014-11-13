@@ -43,6 +43,16 @@ class ReserveController extends BaseController {
 					'Nameshop'=>$nameshop
 
 				));
+				
+				Mail::send('emails.reserve', array('name' => $name,'phonenumber' => $phonenumber, 'numpeople' => $Seat2 ), function ($message){
+					$nameshop=Session::get('nameshop');
+					$emails = DB::select('select Email from shop where Nameshop = ?', array($nameshop));
+					$sendemail;
+					foreach($emails as $email){
+						$sendemail=$email->Email;
+					}
+				$message->to($sendemail,'Dear')->subject('Reserv');
+			});
 				$newseat = $numkeep-$num1;
 				DB::table('shop')
             		->where('Nameshop', $nameshop)

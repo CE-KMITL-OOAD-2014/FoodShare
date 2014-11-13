@@ -1,6 +1,7 @@
 <?php
 class ProfileController extends BaseController {
 	public function user($email){
+		Session::put('Ownername',$email);
 		$user = User::where('email', '=', $email);
 		$shops =  DB::select('select * from shop where Email = ?', array($email));
 		$photos = DB::select('select * from photo where Email = ?', array($email));
