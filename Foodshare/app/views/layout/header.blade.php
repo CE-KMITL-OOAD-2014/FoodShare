@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand">Food Share</a>
+              <a class="navbar-brand">Food </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -22,9 +22,18 @@
                     <li><a href="{{URL::to('/centraledit')}}" type="Edit">Edit</a></li>
                     <li><a href="{{URL::route('signout')}}" type="Logout">Logout</a></li>
                   </ul>
-                </li>
               </ul>
+              <form class="navbar-form navbar-right" role="form" action="{{ URL::route('searchuser-post') }}" method="post">
+            <div class="form-group">
+              <input type="text" name="Email" class="form-control" placeholder="Search By User Email" required>
             </div>
+            <div class="form-group">
+              
+            </div>
+            <button type="submit" class="btn btn-success">Search</button>
+          </form>
+            </div>
+
           </div>
         </nav>
 <!--<nav class="navbar navbar-inverse" role="navigation">
