@@ -7,7 +7,7 @@ class ShopController extends BaseController {
 	public function postcreateshop(){
 		$validator = Validator::make(Input::all(),   //check condition
 			array(
-				'name' => 'required|max:50|unique:auth',
+				'name' => 'required|max:50|unique:shop',
 				'detail' => 'required',
 				'price' => 'required',
 				'city' => 'required',
