@@ -11,4 +11,5 @@ class CommentController extends BaseController {
 		}else{
 			return Redirect::route('profile-user',$owneruser);
 		}
+	}
 }

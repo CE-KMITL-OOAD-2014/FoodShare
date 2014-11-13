@@ -5,7 +5,7 @@ class ProfileController extends BaseController {
 		$user = User::where('email', '=', $email);
 		$shops =  DB::select('select * from shop where Email = ?', array($email));
 		$photos = DB::select('select * from photo where Email = ?', array($email));
-		$comments = DB::select('select * from comment where Email = ?', array($email));
+		$comments = DB::select('select * from comment where OwnerEmail = ?', array($email));
 		if($user->count()){
 			$user = $user->first();
 			return View::make('profile.UserProfile')  
