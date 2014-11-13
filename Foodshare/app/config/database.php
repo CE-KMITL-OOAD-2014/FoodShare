@@ -76,10 +76,10 @@ return array(
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
-			'host'     => 'tcp:inhpq4s7ug.database.windows.net,1433',
-			'database' => 'foodshare',
-			'username' => 'foodshare@inhpq4s7ug',
-			'password' => 'Gunslinger1234',
+			'host'     => 'tcp:bnca8dq6n8.database.windows.net,1433',
+			'database' => 'l2ragonslay',
+			'username' => 'l2ragon@bnca8dq6n8',
+			'password' => 'Agora_die8931',
 			'prefix'   => '',
 		),
 

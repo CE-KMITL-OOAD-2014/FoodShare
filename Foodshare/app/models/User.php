@@ -8,7 +8,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
-       protected $fillable = array('email','password','password_again','code','active');
+       protected $fillable = array('email','password','password_again','code','active','profileImage','extensionimage');
 	/**
 	 * The database table used by the model.
 	 *
@@ -22,7 +22,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	*/
 	/* Define primary key for Identifier */
-	protected $primaryKey = 'ID';
+	protected $primaryKey = 'Email';
 	
 	protected $hidden = array('password', 'remember_token');
 	
@@ -32,4 +32,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getAuthPassword() {
                 return $this->Password;
       }
+    /*public function shops(){
+    	return $this->hasMany('Shop');
+    }*/
 }
