@@ -32,7 +32,7 @@ class ReserveController extends BaseController {
 			foreach($seats as $seat){
 				$numkeep=$seat->Seat;
 			}
-			$seat2=(string)$Seat;
+			$Seat2=(string)$Seat;
 
 			if($num1<$numkeep){
 
