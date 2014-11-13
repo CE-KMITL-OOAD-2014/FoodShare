@@ -1,6 +1,6 @@
 @extends("layout.main")
 @section("content")
-<!--
+
 <div class="jumbotron">
   <div class="container">
     <img width="150" height="150" alt="star" src="data:image/{{{$user->extensionImage}}};base64,{{{$user->profileImage}}}" />
@@ -42,15 +42,21 @@
       </form>
       </div>
     </div>
-  </div> -->
+  </div> 
 <!--testbyblue-->
+<!--
 <div class="col-md-12">
     <div class="col-md-3">
-      
+      <div class="col-md-1">
+      <img width="100" height="100" alt="star" src="data:image/{{{$user->extensionImage}}};base64,{{{$user->profileImage}}}" />
+      </div>
+      <div>
+    </div>
+    <div class="col-md-8">
     </div>
 </div>
 
-
+-->
 
 
 
