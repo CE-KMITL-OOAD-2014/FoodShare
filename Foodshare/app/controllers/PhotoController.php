@@ -14,7 +14,7 @@ class PhotoController extends BaseController{
 			)
 		);
 		if($validator->fails()){            //redirect to signin if error
-			return Redirect::route('Menu-add')
+			return Redirect::route('Photo-set')
 				->withErrors($validator)
 				->withInput();
 		//retrieve image and set parameter image
