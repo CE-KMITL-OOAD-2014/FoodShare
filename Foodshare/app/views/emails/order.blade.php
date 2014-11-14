@@ -12,7 +12,7 @@ Order <br><br>
 Name : {{ $name 	}} <br><br>
 
 
-Lastname :	{{	$lastname		}} <br><br>
+Date Delivert :	{{	$Date		}} <br><br>
 
 
 Description: {{$description		}} <br><br>

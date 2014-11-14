@@ -18,7 +18,7 @@
       <br>
       <input type="text" style="width: 300px" class="form-control" name="name" placeholder="Name" required> 
       
-      <input type="text" style="width: 300px" class="form-control" name="lastname" placeholder="Lastname" required> 
+      <input type="text" style="width: 300px" class="form-control" name="Date" placeholder="Derivery day" required> 
       
       <input type="text" style="width: 300px" class="form-control" name="phonenumber" placeholder="Phonenumber" required> 
       <br><br>

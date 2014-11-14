@@ -13,7 +13,7 @@ class OrderController extends BaseController {
 			array(
 				'description' => 'required',  // have an input
 				'name' => 'required',   //have an input
-				'lastname' => 'required',   //have an input
+				'Date' => 'required',   //have an input
 				'phonenumber' => 'required',   //have an input
 				'address' => 'required'   //have an input
 			)
@@ -25,12 +25,12 @@ class OrderController extends BaseController {
 			
 		}else{
 			$name = Input::get('name');
-			$lastname = Input::get('lastname');
+			$Date = Input::get('Date');
 			$description = Input::get('description');
 			$phonenumber = Input::get('phonenumber');
 			$address = Input::get('address');
 			$nameshop=Session::get('nameshop');
-			Mail::send('emails.order', array('name' => $name,'lastname' => $lastname,'phonenumber' => $phonenumber,'address' => $address,'description' => $description), function ($message) {
+			Mail::send('emails.order', array('name' => $name,'Date' => $Date,'phonenumber' => $phonenumber,'address' => $address,'description' => $description), function ($message) {
 			$nameshop=Session::get('nameshop');
 			$emails = DB::select('select Email from shop where Nameshop = ?', array($nameshop));
 			$sendemail;
