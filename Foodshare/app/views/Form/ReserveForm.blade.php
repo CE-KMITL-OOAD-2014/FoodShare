@@ -1,9 +1,11 @@
 @extends("layout.mainshop")
 @section("content")
+<div class="col-md-8 col-md-offset-2 well ">
     <form role="form" class="form-order" action="{{ URL::route('Reserve-post') }}" method="post">
        <div class="container-fluid">
           <h2 class="form-order-heading">Information to Reserve</h2>
           <p></p>
+          
             <div class="form-group">
               <label for="examplename">Name</label>
               <input type="name" class="form-control" name="name" placeholder="Name" required>
@@ -25,7 +27,10 @@
               {{$errors->first('numpeople')}}
               @endif
             </div>
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
               {{ Form::token() }}
         </form>
+      </div>
+    </div>
+  </div>
 @stop

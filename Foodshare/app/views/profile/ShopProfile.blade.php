@@ -25,7 +25,7 @@
           </form>
 
       @foreach ($comments as $comment)
-          {{$comment->Email}}:{{ $comment->Comment }} </br>
+          <a href="{{ URL::route('profile-user',$comment->Email)}}"> {{$comment->Email}}</a>:{{ $comment->Comment }} </br>
       @endforeach <br>
 
       </div>
@@ -40,18 +40,19 @@
                <div class="col-md-12 well" >
 
            <div class="col-md-12"><br>
-            
-           <center><button type="AllMenu" class="btn btn-primary">ShowAllMenu </center>
+            <center><h3>ShowAllMenu</h3></center>
+           <!-- <center><button type="AllMenu" class="btn btn-primary">ShowAllMenu </center> -->
       <br><br><br>
     @foreach ($menus as $menu)
     
  <div class="row">     
-<div class= "col-md-offset-2">
-  <img width="125" height="125" alt="star" src="data:image/jpg;base64,{{{$menu->Image}}}" />    
-  <div class= "col-md-offset-6">
-      <h3>{{$menu->Namemenu }}  {{$menu->Price}}</h3> 
+    <div class= "col-md-4 col-md-offset-2">
+      <img width="125" height="125" alt="star" src="data:image/jpg;base64,{{{$menu->Image}}}" />   
+    </div> 
+    <div class= "col-md-6">
+      <h4>{{$menu->Namemenu }}  {{$menu->Price}}</h4> 
     </div>
-    </div>
+    
   </div>
     
 
