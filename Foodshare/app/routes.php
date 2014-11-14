@@ -10,21 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/mail', array (
-	'as' => 'mail',
-	'uses' => 'EmailController@home'
-));
-
-
-Route::get('/blob', array (
-	'as' => 'blob-get',
-	'uses' => 'ImageController@home'
-));
-
-Route::post('/blob', array (
-	'as' => 'blob-post',
-	'uses' => 'ImageController@imageblob'
-));
 /*
 | Authentication filter
 */
