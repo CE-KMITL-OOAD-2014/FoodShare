@@ -49,7 +49,7 @@
                 @endif
                 <li><a href="{{URL::route('Reserve-get')}}" type="Reserv">Reserv</a></li>
                 <li><a href="{{URL::route('Order-get')}}" type="Order">Order</a></li>
-                <li><a href="{{URL::route('Review-get')}}" type="Review">Review</a></li>
+                <!--<li><a href="{{URL::route('Review-get')}}" type="Review">Review</a></li> -->
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">

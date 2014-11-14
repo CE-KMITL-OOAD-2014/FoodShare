@@ -1,5 +1,6 @@
 @extends("layout.mainshop")
 @section("content")
+<div class="col-md-8 col-md-offset-2 well ">
 <form role="form" class="form-order" action="{{ URL::route('Reserve-set') }}" method="post">
   <div class="container-fluid">
     <div class="row">
@@ -16,4 +17,5 @@
           </div>
         </div>
     </div>
+    
 @stop

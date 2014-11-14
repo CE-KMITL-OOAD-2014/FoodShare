@@ -28,7 +28,7 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/style.css') }}">
 </head>
-<body>
+<body style="background-color:#F2E897;">
     @include("layout.headershop")
         @yield("content")
 </body>
