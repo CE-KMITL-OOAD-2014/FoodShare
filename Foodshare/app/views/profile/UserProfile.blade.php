@@ -63,10 +63,7 @@
        <div class="row" >
         <div class="col-md-12 well">
          <h4>comment</h4>
-         @foreach ($comments as $comment)
-         <a href="{{ URL::route('profile-user',$comment->Email)}}">{{ $comment->Email }} </a>:{{ $comment->Comment }} </br>
-         @endforeach <br>
-         <form role="form" class="form-order" action="{{ URL::route('Comment-set') }}" method="post" enctype="multipart/form-data">
+           <form role="form" class="form-order" action="{{ URL::route('Comment-set') }}" method="post" enctype="multipart/form-data">
           <textarea class="form-control" rows="3" name="comment"></textarea>
           @if($errors->has('comment'))
           {{$errors->first('comment')}}
@@ -74,6 +71,10 @@
           <br>
           <button type="Menushare" class="btn btn-primary">Comment</button><hr>
         </form>
+
+         @foreach ($comments as $comment)
+         <a href="{{ URL::route('profile-user',$comment->Email)}}">{{ $comment->Email }} </a>:{{ $comment->Comment }} </br>
+         @endforeach <br>
 
       </div>
     </div> 
@@ -153,7 +154,7 @@
 
   </div>
 </div>
-</div>   
+
 
 
 

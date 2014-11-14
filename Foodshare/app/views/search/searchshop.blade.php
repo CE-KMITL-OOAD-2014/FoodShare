@@ -1,6 +1,6 @@
 @extends("layout.main")
 @section("content")
-	<link rel="stylesheet" href="{{ URL::asset('bootstrap/css/edit.css') }}">
+	<!-- <link rel="stylesheet" href="{{ URL::asset('bootstrap/css/edit.css') }}">
     <div class="container">
 	
       <form class="form-signin" action="{{ URL::route('searchshop-post') }}" method="post" role="form">
@@ -28,7 +28,7 @@
         <button  type="submit" class="btn btn-default">Search</button>
       </form>
 	
-    </div> <!-- /container -->
+    </div>  /container -->
 
 
 @stop
