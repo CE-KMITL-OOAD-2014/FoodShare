@@ -18,6 +18,9 @@ Phonenumber:	{{	$phonenumber	}} <br><br>
 numpeople :	{{	$numpeople	}} <br><br>
 
 
+Date : {{$Date }}<br><br>
+
+
     
   </body>
 </html>

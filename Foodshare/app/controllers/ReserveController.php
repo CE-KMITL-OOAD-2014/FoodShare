@@ -10,13 +10,14 @@ class ReserveController extends BaseController {
 		$validator = Validator::make(Input::all(),   //check condition
 			array(
 				'name' => 'required',
-				'phonenumber' => 'required',
-				'numpeople' => 'required',
+				'phonenumber' => 'required|numeric',
+				'numpeople' => 'required|numeric',
+				'Date'=>'required'
 			)
 		);
 		
 		if($validator->fails()){   //if fail redirect to register page
-			return Redirect::route('Reserve-show')
+			return Redirect::route('Reserve-get')
 				->withErrors($validator)
 				->withInput();
 		}else{
@@ -24,6 +25,7 @@ class ReserveController extends BaseController {
 			$phonenumber = Input::get('phonenumber');
 			$Seat = Input::get('numpeople');
 			$nameshop=Session::get('nameshop');
+			$Date=Input::get('Date');
 
 			$num1;
 			$num1=(int)$Seat;
@@ -44,7 +46,7 @@ class ReserveController extends BaseController {
 
 				));
 				
-				Mail::send('emails.reserve', array('name' => $name,'phonenumber' => $phonenumber, 'numpeople' => $Seat2 ), function ($message){
+				Mail::send('emails.reserve', array('name' => $name,'phonenumber' => $phonenumber, 'numpeople' => $Seat2 ,'Date'=>$Date), function ($message){
 					$nameshop=Session::get('nameshop');
 					$emails = DB::select('select Email from shop where Nameshop = ?', array($nameshop));
 					$sendemail;
