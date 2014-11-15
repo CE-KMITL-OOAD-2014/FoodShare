@@ -1,4 +1,4 @@
-@extends("layout.main")
+@extends("layout.mainshop")
 @section("content")
 <form role="form" class="form-order" action="{{ URL::route('Order-add') }}" method="post">
 	<div class="container-fluid ">
