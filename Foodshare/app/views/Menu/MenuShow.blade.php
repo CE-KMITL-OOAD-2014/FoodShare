@@ -1,4 +1,4 @@
-@extends("layout.main")
+@extends("layout.mainshop")
 @section("content")
  <form role="form" class="form-order" action="{{ URL::route('Menu-add') }}" method="post" enctype="multipart/form-data">
   <div class="col-md-8 col-md-offset-2 well ">
