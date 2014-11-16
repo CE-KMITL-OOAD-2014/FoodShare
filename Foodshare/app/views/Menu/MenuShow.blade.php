@@ -12,14 +12,14 @@
           </div>
           <div class="form-group col-md-8">
             <Label for="Price">Food name</label>
-            <input type="name" class="form-control" name="name" placeholder="Food name">
+            <input type="name" class="form-control" name="name" placeholder="Food name" requried>
           </div><br>
           @if($errors->has('name'))
             {{$errors->first('name')}}
           @endif
           <div class="form-group col-md-8">
             <Label for="Price">Enter the Price</label>
-            <input type="price" class="form-control" name="price" placeholder="price">
+            <input type="price" class="form-control" name="price" placeholder="price" requried>
           </div> <br>
           @if($errors->has('price'))
             {{$errors->first('price')}}

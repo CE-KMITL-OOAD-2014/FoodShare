@@ -6,9 +6,9 @@
         <div class="row" >
           <div class="col-md-12 well">
             <div class="col-md-3 ">
-              <img width="150" height="150" alt="star" src="data:image/{{{$user->extensionImage}}};base64,{{{$user->profileImage}}}" />
+              <img width="75" height="75" alt="star" src="data:image/{{{$user->extensionImage}}};base64,{{{$user->profileImage}}}" />
             </div>
-            <div class="col-md-6 col-md-offset-2"><br><br>
+            <div class="col-md-6 col-md-offset-1"><br><br>
              <p>{{$user->Email}}  </p> 
            </div>
          </div>

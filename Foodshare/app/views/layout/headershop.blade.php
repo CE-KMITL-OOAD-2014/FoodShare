@@ -1,5 +1,5 @@
 @section("headershop")
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -18,10 +18,10 @@
       @endif
         <li><a href="{{URL::route('Reserve-get')}}" type="Reserv">Reserv</a></li>
         <li><a href="{{URL::route('Order-get')}}" type="Order">Order</a></li>
+        <li><a href="{{URL::route('home')}}" type="home">home</a><li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Setting<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="{{URL::route('home')}}" type="home">home</a><li>
             <li><a href="{{URL::to('/centraledit')}}" type="Edit">Edit</a></li>
             <li><a href="{{URL::route('signout')}}" type="Logout">Logout</a></li>
           </ul>

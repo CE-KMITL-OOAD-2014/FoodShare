@@ -10,7 +10,7 @@ class MenuController extends BaseController {
 			array(
 				'uploadimage'=>'required|image',
 				'name' => 'required',  																			// have an input
-				'price' => 'required',  																		//have an input
+				'price' => 'required|numeric',  																//have an input
 			)
 		);
 		if($validator->fails()){            																	//redirect to signin if error
@@ -24,7 +24,7 @@ class MenuController extends BaseController {
 		$filename=$image->getClientOriginalName();
 		$extension = $image->getClientOriginalExtension();
 		
-		if(Image::make($image->getRealPath())->resize(75,75)->save(public_path('img/'.$filename)))
+		if(Image::make($image->getRealPath())->resize(150,150)->save(public_path('img/'.$filename)))				
 		{	
 				$newpath = public_path('img/'.$filename);
 				$img_data = file_get_contents($newpath);

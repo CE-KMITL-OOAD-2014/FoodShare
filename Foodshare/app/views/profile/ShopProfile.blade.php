@@ -37,7 +37,7 @@
     @foreach ($menus as $menu) 
         <div class="row">     
           <div class= "col-md-4 col-md-offset-2">
-            <img width="125" height="125" alt="star" src="data:image/jpg;base64,{{{$menu->Image}}}" />   
+            <img class="featurette-image img-responsive" alt="star" src="data:image/jpg;base64,{{{$menu->Image}}}" />   
           </div> 
           <div class= "col-md-6">
             <h4><div style="word-break: break-word;">{{$menu->Namemenu }}  {{$menu->Price}}</div></h4> 
