@@ -7,19 +7,19 @@ class PhotoController extends BaseController{
 
 	public function addPhoto(){
 
-		$validator = Validator::make(Input::all(), //check condition
+		$validator = Validator::make(Input::all(), 															//check condition
 			array(
 				'uploadimage'=>'required|image',
-				'detail' => 'required'  // have an input  
+				'detail' => 'required'  																	// have an input  
 			)
 		);
-		if($validator->fails()){            //redirect to signin if error
+		if($validator->fails()){            																//redirect to signin if error
 			return Redirect::route('Photo-set')
 				->withErrors($validator)
 				->withInput();
 		//retrieve image and set parameter image
 		}else{
-		$image=Input::file('uploadimage');
+		$image=Input::file('uploadimage');																	//input image and set path
 		$img_path=$image->getRealPath();
 		$filename=$image->getClientOriginalName();
 		$extension = $image->getClientOriginalExtension();
@@ -42,7 +42,7 @@ class PhotoController extends BaseController{
 
 		if($photo){
 			File::delete($newpath);
-			return Redirect::route('home');
+			return Redirect::route('home');																	//redirect to home (user Profile)
 			}
 		}
 	}

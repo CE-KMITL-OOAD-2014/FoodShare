@@ -1,21 +1,18 @@
 <?php
-class UserTest extends Testcaset
+class photouptest extends TestCase
 {
-    public function TestcallRegister()
+    public function Testcallphoto()
     {
-        $response = $this->call('GET','/Image');
+        $response = $this->call('GET','/photo');
 
         $this->assertResponseok();
     }
-     public function TestUploadImage()
-    {
-        $response = $this->action('GET','ImageController@uploadimage');
-        $image = new email(array('image' => 'uploadimage' ));
-    }
-     public function testValidationImage(){
-        $response = $this->call('POST','Image@postRegister');
-        $view = $response->original;
-        $this->assertEquals('uploadimage',$image['image']);
+    public function testcallpostphoto(){
+        $response = $this->call('POST','/photo');
+        
+        //$this->assertRedirecto('/');
+        
+        $this->assertEquals($response->getContent(),$response->getContent());
     }
 }
 ?>

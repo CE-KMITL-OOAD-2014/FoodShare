@@ -5,7 +5,6 @@
        <div class="container-fluid">
           <h2 class="form-order-heading">Information to Reserve</h2>
           <p></p>
-          
             <div class="form-group">
               <label for="examplename">Name</label>
               <input type="name" class="form-control" name="name" placeholder="Name" required>

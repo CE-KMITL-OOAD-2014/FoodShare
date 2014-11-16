@@ -5,7 +5,7 @@ class ShopController extends BaseController {
 		return View::make('account.shop');
 	}
 	public function postcreateshop(){
-		$validator = Validator::make(Input::all(),   //check condition
+		$validator = Validator::make(Input::all(),   											//check condition
 			array(
 				'name' => 'required|max:50|unique:shop',
 				'detail' => 'required',
@@ -15,7 +15,7 @@ class ShopController extends BaseController {
 			)
 		);
 		
-		if($validator->fails()){   //if fail redirect to register page
+		if($validator->fails()){   																//if fail redirect to Createshop
 			return Redirect::route('createshop-get')
 				->withErrors($validator)
 				->withInput();
@@ -28,7 +28,7 @@ class ShopController extends BaseController {
 			$type = Input::get('type');
 			$seat = Input::get('seat');
 
-			$shop = Shop::create(array(
+			$shop = Shop::create(array(															//Create shop to Class Shop
 				'Nameshop'=> $name,
 				'Email' => $email,
 				'Detail' => $detail,
@@ -38,14 +38,14 @@ class ShopController extends BaseController {
 				'Seat'=>$seat
 			));
 			if($shop){
-				return Redirect::route('home');
+				return Redirect::route('home');													//if created shop to redirect to home
 			}
 		}
 	}
 	
-	public function shopprofile($name){
+	public function shopprofile($name){															//Display the profile
 		
-		$nameshops = DB::select('select * from shop where Nameshop = ?', array($name));
+		$nameshops = DB::select('select * from shop where Nameshop = ?', array($name));				
 		$menus = DB::select('select * from menu where Nameshop = ?', array($name));
 		$comments = DB::select('select * from review where Nameshop = ?', array($name));
 		foreach ($nameshops as $nameshop)
@@ -63,7 +63,7 @@ class ShopController extends BaseController {
 		return Redirect::intended('/');
 		}
 	}
-	public function getallShop(){
+	public function getallShop(){																//To display all shop
 		$shops = DB::table('shop')->get();
 		return View::make('Form.ShowAllShop')->with('shops',$shops);
 	}

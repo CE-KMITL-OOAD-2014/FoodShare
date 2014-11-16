@@ -1,7 +1,6 @@
 @extends("layout.main")
 @section("content")
 <center>
-
 		@if(Session::has('global'))
 			<p> {{ Session::get('global')}} </p>
 			</center>

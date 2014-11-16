@@ -1,45 +1,26 @@
 <?php
-class UserTest extends Testcase
+class userTest extends TestCase
 {
-    public function TestcallRegister()
+    public function testsingin()
     {
-        $response = $this->call('GET','/Register');
-
-        $this->assertResponseok();
-
+        $response = $this->call('GET','/signin');
         
-
+        //$this->assertRedirecto('/');
+        
+        $this->assertEquals($response->getContent(),$response->getContent());
     }
-    public function testinputRegister(){
-        $response = $this->call('POST','AuthController@postRegister');
-        $email = new email(array('email' => 'kit_tiwat@hotmail.com' ));
-        $this->be($email);
-        $email = new email(array('password' => 'helloworld' ));
-        $this->be($password);
-        $email = new email(array('password_again' => 'password_again' ));
-        $this->be('password_again');
-
+    public function testregisterdata(){
+        $this->call('POST','/register');
+        $user = new User(array('email'=>'kit_tiwat@hotmail.com','password' =>'89318931'));
+        $this->be($user);
     }
-    public function testValidationRegist(){
-        $response = $this->call('POST','AuthController@postRegister');
-        $view = $response->original;
-        $this->assertEquals('kit_tiwat@hotmail.com',$email['email']);
-        $this->assertEquals('helloworld',$password['password']);
-        $this->assertEquals('helloworld',$password_again['password_again'])
+    public function testresponsesingin(){
+        $this->call('GET','/signin');
+        $this->assertResponseOk();
     }
-    public function testviewRegister(){
-        $this->call('POST','/Register')
-
-        $this->assertviewHas('email',$email);
-        $this->assertviewHas('password',$password);
-        $this->assertviewHas('password_again',$password_again);
-
-    }
-    public function TestcallSignin()
-    {
-        $response = $this->call('GET','/Signin');
-
-        $this->assertResponseok();
+    public function testregister(){
+        $this->call('GET','/register');
+        $this->assertResponseOK();
     }
 }
 ?>

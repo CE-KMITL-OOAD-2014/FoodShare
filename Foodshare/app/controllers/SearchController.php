@@ -23,8 +23,8 @@ class SearchController extends BaseController {
 		return View::make('search.searchshop');
 	}
 	public function searchUserpost(){
-		$validator = Validator::make(Input::all(),array('Email' => 'required|max:50'));//check condition
-		if($validator->fails()){   //if fail redirect to register page
+		$validator = Validator::make(Input::all(),array('Email' => 'required|max:50'));					//check condition
+		if($validator->fails()){   																		//if fail redirect to Search page
 			return Redirect::route('searchuser-get')
 				->withErrors($validator)
 				->withInput();
@@ -40,7 +40,7 @@ class SearchController extends BaseController {
 			}
 		}
 	}
-	public function searchShoppost(){
+	public function searchShoppost(){																	//To search shop
 	
 		$nameshop = Input::get('Nameshop');
 		$city = Input::get('city');

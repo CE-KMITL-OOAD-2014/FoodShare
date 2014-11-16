@@ -69,6 +69,9 @@ Route::group(array('before' => 'auth' ), function() {
 	'as' => 'shop-user',
 	'uses' => 'ShopController@shopprofile'
 	));
+	/*
+	Search system
+	*/
 	Route::get('/centralsearch', function(){
 	return View::make('search.centralsearch');
 	});
@@ -163,7 +166,7 @@ Route::group(array('before' => 'guest'), function(){
 	});
 	
 });
-/////Order//////
+/////Order to shop//////
 Route::get('/Order', array(
 	'as' => 'Order-get', 
 	'uses' => 'OrderController@getOrder'
@@ -174,29 +177,33 @@ Route::post('/Order', array(
 		'uses' => 'OrderController@postOrder'
 ));
 
+
+////Reserve By user//////
 Route::get('/Reserv', array(
 	'as' => 'Reserve-get', 
 	'uses' => 'ReserveController@getReserve'
 ));
-
 Route::post('/Reserv', array(
 	'as' => 'Reserve-post', 
 	'uses' => 'ReserveController@postReserve'
 ));
-
+////Status for reserve //////
 Route::get('/Reservestatus', array(
 	'as' => 'Reserve-status', 
 	'uses' => 'ReserveController@statusReserve'
 ));
+///For shop to set the Reserve///
 Route::post('/setReserve',array(
 	'as' => 'Reserve-set',
 	'uses' => 'ReserveController@setReserve'
 ));
+///Show Form to set Reserv////
 Route::get('/setReserve',array(
 	'as' => 'Reserve-show',
 	'uses' => 'ReserveController@showReserve'
 ));
 
+////Review for shop////
 Route::get('/Review',array(
 	'as' => 'Review-get',
 	'uses' => 'ReviewController@getReview'
@@ -206,20 +213,24 @@ Route::post('/Review',array(
 	'uses' => 'ReviewController@postReview'
 ));
 
+////To make menu for shop//
 Route::get('/Menu',array(
 	'as' => 'Menu-get',
 	'uses' => 'MenuController@getMenu'
 
 ));
-
 Route::post('/Menu',array(
 	'as'=>'Menu-add',
 	'uses'=>'MenuController@addMenu'
 ));
+
+//Comment in User ///
 Route::post('/comment',array(
 	'as' => 'Comment-set',
 	'uses' => 'CommentController@postComment'
 ));
+
+//To display all shop//
 Route::get('/allshop', array(
 	'as' => 'Shop-show',
 	'uses' =>'ShopController@getallShop'

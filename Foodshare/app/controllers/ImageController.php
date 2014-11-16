@@ -3,14 +3,14 @@
 class ImageController extends BaseController {
 	public function home(){
 	
-		return View::make('image.image');
+		return View::make('image.image');																	//To give output type
 	}
 	
 	public function uploadimage(){
 		$input=Input::all();
 		$rules=array('uploadimage' => 'required|image');
-	    $validator = Validator::make($input, $rules);     //check condition
-		if ($validator->fails()){      								//if fail redirect to form
+	    $validator = Validator::make($input, $rules);     													//check condition
+		if ($validator->fails()){      																		//if fail redirect to form
 			return Redirect::route('image-get')->withErrors($validator);
 		}else{
 			$image=Input::file('uploadimage');
@@ -29,7 +29,7 @@ class ImageController extends BaseController {
 				$user->extensionImage = $extension;
 				$user->save();
 				File::delete($newpath);
-				return Redirect::route('image-get')
+				return Redirect::route('home')
 					->with('global','successfully');
 			}
 			else{

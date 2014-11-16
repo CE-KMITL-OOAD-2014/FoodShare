@@ -6,20 +6,20 @@ class MenuController extends BaseController {
 		return View::make('Menu.MenuShow');	
 	}
 	public function addMenu(){
-		$validator = Validator::make(Input::all(), //check condition
+		$validator = Validator::make(Input::all(), 																//check condition
 			array(
 				'uploadimage'=>'required|image',
-				'name' => 'required',  // have an input
-				'price' => 'required',   //have an input
+				'name' => 'required',  																			// have an input
+				'price' => 'required',  																		//have an input
 			)
 		);
-		if($validator->fails()){            //redirect to signin if error
+		if($validator->fails()){            																	//redirect to signin if error
 			return Redirect::route('Menu-add')
 				->withErrors($validator)
 				->withInput();
 		//retrieve image and set parameter image
 		}else{
-		$image=Input::file('uploadimage');
+		$image=Input::file('uploadimage');																		//input file pic and set path
 		$img_path=$image->getRealPath();
 		$filename=$image->getClientOriginalName();
 		$extension = $image->getClientOriginalExtension();
@@ -36,7 +36,7 @@ class MenuController extends BaseController {
 		$price = Input::get('price');
 		$Nameshop = Session::get('nameshop');
 
-		$addmenu = Menu::create(array(
+		$addmenu = Menu::create(array(																			 //Store in DB and call Class Menu
 			'Nameshop'=>$Nameshop,
 			'Price'=>$price,
 			'Namemenu'=>$namemenu,
@@ -45,7 +45,7 @@ class MenuController extends BaseController {
 
 		if($addmenu){
 			File::delete($newpath);
-			return Redirect::route('shop-user',$Nameshop);
+			return Redirect::route('shop-user',$Nameshop);														//if menu added redirect to shop profile
 			}
 		}
 	}

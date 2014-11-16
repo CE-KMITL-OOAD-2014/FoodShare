@@ -6,14 +6,14 @@ class EditController extends BaseController {
 		return View::make('account.edit');
 	}
 	public function postedit(){
-		$validator = Validator::make(Input::all(), //check condition
+		$validator = Validator::make(Input::all(), 											//check condition
 			array(
-				'oldpassword' => 'required',  //is email and have an input
+				'oldpassword' => 'required',  												//is email and have an input
 				'newpassword' => 'required|max:256|min:3',
 				'password_again' => 'required|same:newpassword'
 			)
 		 );
-        if($validator->fails()){   //if fail redirect to register page
+        if($validator->fails()){   															//if fail redirect to register page
 			return Redirect::route('edit-get')
 				->withErrors($validator)
 				->withInput();
@@ -27,11 +27,11 @@ class EditController extends BaseController {
 				$hashpassword=Hash::make($newpassword);
 				$user->Password=$hashpassword;
 				$user->save();
-				return Redirect::route('edit-get')
+				return Redirect::route('edit-get')											//if edit password success
 					->with('global','successfully');
 			}
 			else{
-			    return Redirect::route('edit-get')
+			    return Redirect::route('edit-get')											//if edit not success
 					->with('global','Old password and new password don\'t match');
 			}
 		}	
