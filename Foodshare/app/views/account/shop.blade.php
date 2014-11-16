@@ -9,7 +9,10 @@
  				<div class="col-md-12 "> <div class="form-group">
             		<Label for="Price" class="col-md-2 control-label" ><p style="color:#428bca;">Name shop</p></label>
             		<div class="col-md-9">
-            		<input type="name" class="form-control" name="name" placeholder="Name" required><br>
+            		<input type="name" class="form-control" name="Nameshop" placeholder="Name" required><br>
+            		@if($errors->has('Nameshop'))
+			   			{{$errors->first('Nameshop')}}
+	      			@endif
             		</div>
            		</div>
           	</div>
@@ -131,6 +134,9 @@
         	<Label for="Price" class="col-md-2 control-label" ><p style="color:#428bca;">Seat</p></label>
             	<div class="col-md-9">
             		<input type="number" name="seat" class="form-control" placeholder="Seat" required><br>
+            		@if($errors->has('seat'))
+			   			{{$errors->first('seat')}}
+	      			@endif
             	</div>
     	</div>
 	</div>

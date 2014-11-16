@@ -29,7 +29,7 @@ class ImageController extends BaseController {
 				$user->extensionImage = $extension;
 				$user->save();
 				File::delete($newpath);
-				return Redirect::route('home')
+				return Redirect::route('home')																//go to home when finish upload image
 					->with('global','successfully');
 			}
 			else{

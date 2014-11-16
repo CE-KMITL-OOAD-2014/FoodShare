@@ -7,11 +7,12 @@ class ShopController extends BaseController {
 	public function postcreateshop(){
 		$validator = Validator::make(Input::all(),   											//check condition
 			array(
-				'name' => 'required|max:50|unique:shop',
+				'Nameshop' => 'required|max:50|unique:shop',
 				'detail' => 'required',
 				'price' => 'required',
 				'city' => 'required',
-				'type' => 'required'
+				'type' => 'required',
+				'seat' => 'required|numeric'
 			)
 		);
 		
@@ -21,7 +22,7 @@ class ShopController extends BaseController {
 				->withInput();
 		}else{
 			$email = Session::get('name');
-			$name = input::get('name');
+			$Nameshop = input::get('Nameshop');
 			$detail = Input::get('detail');
 			$price = Input::get('price');
 			$city = Input::get('city');
@@ -29,7 +30,7 @@ class ShopController extends BaseController {
 			$seat = Input::get('seat');
 
 			$shop = Shop::create(array(															//Create shop to Class Shop
-				'Nameshop'=> $name,
+				'Nameshop'=> $Nameshop,
 				'Email' => $email,
 				'Detail' => $detail,
 				'Price'=>$price,
