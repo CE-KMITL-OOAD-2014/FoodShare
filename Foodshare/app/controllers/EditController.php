@@ -18,7 +18,7 @@ class EditController extends BaseController {
 				->withErrors($validator)
 				->withInput();
 		}else{
-			$oldpassword = Input::get('oldpassword');
+			$oldpassword = Input::get('oldpassword');										//insert file section
 			$newpassword = Input::get('newpassword');
 			$email = Session::get('name');
 			$user = User::find($email);
